@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "villager",
+  "version": "${version}",
+  "name": "Villager",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "unlicense",
+  "icon": "assets/villager/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.villager.client.VillagerClient"
+    ],
+    "main": [
+      "com.villager.Villager"
+    ]
+  },
+  "mixins": [
+    "villager.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.villager.fireball.move": {
+			"loop": true,
+			"animation_length": 0.1,
+			"bones": {
+				"root": {
+					"rotation": {
+						"vector": [
+							"q.life_time * 520",
+							"q.life_time * 120",
+							"q.life_time * 20"
+						]
+					}
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "trail"
+				}
+			}
+		},
+		"geckolib_format_version": 2
+	}
+}

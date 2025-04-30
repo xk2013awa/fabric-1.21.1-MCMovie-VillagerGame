@@ -1,0 +1,42 @@
+[
+  {
+    "topic": "你喜欢吃什么？",
+    "choices": [
+      { "text": "熔岩烤鸡！", "friendshipChange": 2 },
+      { "text": "毒马铃薯", "friendshipChange": -1 },
+      { "text": "其实我吃村民肉", "friendshipChange": -3 }
+    ]
+  },
+  {
+    "topic": "为什么最近总有人往我屋里扔鸡蛋？",
+    "choices": [
+      { "text": "可能把你当大电影里的NPC了，建议收门票", "friendshipChange": 2 },
+      { "text": "比圆头耄耋闯民宅文明多了，知足吧", "friendshipChange": 0 },
+      { "text": "他们想孵出第二只你这样的稀有物种", "friendshipChange": -3 }
+    ]
+  },
+  {
+    "topic": "你觉得僵尸村民能救吗？",
+    "choices": [
+      { "text": "当然能，金苹果+虚弱药水就行", "friendshipChange": 2 },
+      { "text": "不知道，没试过", "friendshipChange": 0 },
+      { "text": "救什么救，直接上复合弓处理", "friendshipChange": -3 }
+    ]
+  },
+  {
+    "topic": "为什么我的世界大电影里村民戏份这么少？",
+    "choices": [
+      { "text": "怕观众发现主演还没你聪明", "friendshipChange": -2 },
+      { "text": "导演怕村民抢了垃圾侠的热度", "friendshipChange": 0 },
+      { "text": "留戏份给续集：《绿袍尊者之魔童闹海》", "friendshipChange": 4 }
+    ]
+  },
+  {
+    "topic": "我给我爹MVP奖杯刻了'曼波'...",
+    "choices": [
+      { "text": "孝到牢大连夜修改直升机操作手册", "friendshipChange": -3 },
+      { "text": "建议申报非物质文化遗产", "friendshipChange": 2 },
+      { "text": "otto看了都直呼稳健", "friendshipChange": 5 }
+    ]
+  }
+]

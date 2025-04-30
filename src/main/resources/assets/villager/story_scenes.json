@@ -1,0 +1,229 @@
+[
+  {
+  "sceneId": "first_meet",
+  "lines": [
+      { "speaker": "绿袍村民", "character": "villager", "expression": "normal", "text": "（绿袍村民茫然地看着你）" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "normal", "text": "嗯？你是新的冒险家吗？" },
+      { "speaker": "我", "character": "player", "expression": "normal", "text": "……你好，我刚刚路过这个村子。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "normal", "text": "这里的风常常把袍子吹得乱飞……你不会介意吧？" },
+      { "speaker": "我", "character": "player", "expression": "happy", "text": "不会的，其实我觉得……挺可爱的。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "happy", "text": "可…可爱？（他悄悄红了脸）" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "jealousy", "text": "大家都说我傻…你是不是也这么觉得？" },
+      { "speaker": "我", "character": "player", "expression": "happy", "text": "不，我觉得你挺特别的。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "jealousy", "text": "特别？是特别傻还是特别…可爱？"  },
+      { "speaker": "我", "character": "player", "expression": "happy", "text": "我更想说…特别可爱。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "shy", "text": "诶？！你、你是不是在开玩笑……" },
+      { "speaker": "我", "character": "player", "expression": "normal", "text": "没有，我很认真。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "happy", "text": "（小声）我才没有开心呢……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "normal", "text": "不过你真的愿意…继续和我说话吗？" },
+      { "speaker": "我", "character": "player", "expression": "happy", "text": "当然愿意，我对你很感兴趣。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "happy", "text": "你是第一个…没有笑话我、没有躲开我的人。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "shy", "text": "你靠近的时候，我心跳得好快……这是不是病了？" },
+      { "speaker": "我", "character": "player", "expression": "shy", "text": "这叫喜欢一个人的感觉。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "happy", "text": "（沉默几秒）那…以后，你还会来找我吗？" },
+      { "speaker": "我", "character": "player", "expression": "happy", "text": "会的，我一定会常来看你。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "happy", "text": "那…约好了！" }
+    ]
+  },
+  {
+    "sceneId": "gift_empty_hand",
+    "lines": [
+      { "speaker": "我", "character": "player", "expression": "normal", "text": "我这是……空手送礼？" },
+      { "speaker": "我", "character": "player", "expression": "shy", "text": "好像有点傻……" },
+      { "speaker": "我", "character": "player", "expression": "normal", "text": "送礼空手可不行，得准备点什么才行。" }
+    ]
+  },
+  {
+    "sceneId": "gift_like",
+    "lines": [
+      { "speaker": "绿袍村民", "character": "villager", "expression": "normal", "text": "你拿的是什么？" },
+      { "speaker": "我",  "character": "player",  "expression": "gift",  "text": "这是专门给你的礼物，希望你喜欢。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "happy",  "text": "礼物？给…给我？" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "shy",   "text": "（惊讶地接过）" },
+      { "speaker": "我",  "character": "player",  "expression": "happy",  "text": "每次跟你聊天都有新发现。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "shy",   "text": "你…你真是太周到了。" },
+      { "speaker": "我",  "character": "player",  "expression": "shy",   "text": "看到你开心我就满足了。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "shy",   "text": "能收到你的心意，我好幸福！" },
+      { "speaker": "我",  "character": "player",  "expression": "happy",  "text": "我会等着你的惊喜。" }
+    ]
+  },
+  {
+    "sceneId": "gift_dislike",
+    "lines": [
+      { "speaker": "绿袍村民", "character": "villager", "expression": "normal", "text": "你拿的…是什么？" },
+      { "speaker": "我",  "character": "player",  "expression": "gift",  "text": "这个送给你…希望你喜欢。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "angry", "text": "……你认真的？" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "mad",   "text": "我不明白，你为什么觉得我会喜欢这种东西。" },
+      { "speaker": "我",   "character": "player",   "expression": "shy",   "text": "我…只是想表达一下心意。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "angry", "text": "可你连我喜欢什么都不知道，对吧？" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "mad",   "text": "下次，至少用点心。" },
+      { "speaker": "我",   "character": "player",   "expression": "normal", "text": "……对不起，我没有考虑周全。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "angry", "text": "唉…算了，别再说了。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "mad",   "text": "我想一个人静一静。"
+      }
+    ]
+  },
+  {
+    "sceneId": "daily_request_apple",
+    "lines": [
+      { "speaker": "我", "character": "player", "expression": "normal", "text": "你头上怎么有个感叹号？" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "exclamation", "text": "啊！你注意到了？其实……我今天忘了准备食物了。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "normal" , "text": "你能帮我找几个苹果吗？我只要3个就够了！" }
+    ]
+  },
+  {
+    "sceneId": "daily_request_apple_done",
+    "lines": [
+      { "speaker": "我", "character": "player", "expression": "gift", "text": "我带来苹果了。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "happy", "text": "哇！你真的帮我带来了！谢谢你！" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "shy", "text": "我觉得你是个值得信赖的人……" }
+    ]
+  },
+  {
+    "sceneId": "enemy_cutscene",
+    "lines": [
+      { "speaker": "绿袍村民", "character": "villager", "expression": "angry", "text": "你竟然这样对我……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "mad", "text": "我已经不想再忍了。你，今天别想活着离开！" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "mad", "text": "铁傀儡们——动手！" },
+      { "speaker": "铁傀儡", "character": "iron_golem", "expression": "iron_golem", "text": "遵命" },
+      { "speaker": "我", "character": "player", "expression": "angry", "text": "？！？" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "iron_golems", "text": "铁傀儡大军给我杀了TA!..." }
+    ]
+  },
+  {
+    "sceneId": "flirt_success",
+    "lines": [
+      { "speaker": "我", "character": "player", "expression": "shy", "text": "你的眼睛……好像宝石一样闪闪发光。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "shy", "text": "诶！？你、你怎么突然这么说……" },
+      { "speaker": "我", "character": "player", "expression": "happy", "text": "而且你的声音，每次听都觉得安心。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "shy", "text": "你、你别再说了啦……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "jealousy", "text": "……不行，我有点受不了你这样说话。" },
+      { "speaker": "我", "character": "player", "expression": "normal", "text": "为什么？" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "shy", "text": "因为……因为我怕我会喜欢上你。" }
+    ]
+  },
+  {
+    "sceneId": "flirt_fail",
+    "lines": [
+      { "speaker": "我", "character": "player", "expression": "shy", "text": "你最近是不是变得更可爱了？" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "angry", "text": "……你是不是对谁都这么说？" },
+      { "speaker": "我", "character": "player", "expression": "normal", "text": "没有啦，我是认真的。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "mad", "text": "我可不吃你这套……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "mad", "text": "如果你只是来开玩笑的，那就请回吧。" }
+    ]
+  },
+  {
+    "sceneId": "confess_success",
+    "lines": [
+      { "speaker": "我",  "character": "player",  "expression": "shy",  "text": "我有件事想对你说……" },
+      { "speaker": "绿袍村民","character": "villager","expression":"normal",   "text": "？" },
+      { "speaker": "我",  "character": "player",  "expression": "shy","text": "我……喜欢你。" },
+      { "speaker": "绿袍村民","character": "villager","expression":"shy",   "text": "你…你是认真的吗？" },
+      { "speaker": "我",  "character": "player",  "expression": "happy","text": "真的，我很认真。" },
+      { "speaker": "绿袍村民","character": "villager","expression":"shy", "text": "我…我也喜欢你！" },
+      { "speaker": "绿袍村民","character": "villager","expression":"happy", "text": "从今以后，让我们一起冒险吧！" }
+    ]
+  },
+  {
+    "sceneId": "confess_fail",
+    "lines": [
+      { "speaker": "我",  "character": "player",  "expression": "shy",   "text": "我……喜欢你。" },
+      { "speaker": "绿袍村民","character": "villager","expression":"angry", "text": "你…你到底在说什么？" },
+      { "speaker": "我",  "character": "player",  "expression": "normal","text": "我是真心的。" },
+      { "speaker": "绿袍村民","character": "villager","expression":"mad",   "text": "抱歉，我不…不想跟你有那种关系。" },
+      { "speaker": "我",  "character": "player",  "expression": "shy",   "text": "没关系，对不起打扰了。" }
+    ]
+  },
+
+  {
+    "sceneId": "wanted_story_intro",
+    "lines": [
+      { "speaker": "绿袍村民", "character": "villager", "expression": "normal", "text": "……我有件事，一直瞒着你。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "sad", "text": "我并不只是一个普通的村民……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "mad", "text": "我……是猪灵军团的通缉犯。" },
+      { "speaker": "我", "character": "player", "expression": "angry", "text": "你说什么……？" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "sad", "text": "我曾经，是他们的一员……但我背叛了他们。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "sad", "text": "因为我不想再烧村、杀人、掠夺……我想当个普通人。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "cry", "text": "可我…终究逃不掉……他们找到了我。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "cry", "text": "他们要在今晚，把我带回去处刑……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "cry", "text": "我不该靠近你…我会害了你……" },
+      { "speaker": "我", "character": "player", "expression": "shy", "text": "你现在才说这些，是因为……你怕我受伤？" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "hug", "text": "我不是不信你……只是太害怕了……我不想死……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "hug", "text": "我不想离开你……呜……求你……救我……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "cry", "text": "就算只有一线希望，我也想赌一赌……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "cry", "text": "我愿意用我全部的生命来还你……" },
+      { "speaker": "我", "character": "player", "expression": "normal", "text": "……" },
+      { "speaker": "猪灵大军", "character": "piglin_army", "expression": "piglin_army", "text": "（远处响起号角声，天空被炽红染满）" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "sad", "text": "来了……他们来了！" }
+    ]
+  },
+  {
+    "sceneId": "wanted_save_scene",
+    "lines": [
+      { "speaker": "绿袍村民", "character": "villager", "expression": "shy", "text": "你真的……愿意帮我？" },
+      { "speaker": "我", "character": "player", "expression": "happy", "text": "当然，我说过要保护你的。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "cry", "text": "呜……我从没想过，有人会愿意站在我这边……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "cry", "text": "你明知道我背负的是整个猪灵帝国的通缉……" },
+      { "speaker": "我", "character": "player", "expression": "angry", "text": "他们来几个，我就挡几个。你别怕。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "hug", "text": "……我怕，但你在我身边，我就不怕了……" },
+      { "speaker": "猪灵将军", "character": "piglin", "expression": "piglin", "text": "就是你——在保护那个叛徒？" },
+      { "speaker": "我", "character": "player", "expression": "mad", "text": "他不是叛徒，他是我最重要的人！" },
+      { "speaker": "猪灵将军", "character": "piglin", "expression": "piglin", "text": "好胆！居然敢对抗我们猪灵军队？" },
+      { "speaker": "绿袍村民", "character": "piglin_army", "expression": "piglin_army", "text": "他们……越来越多了……我们……逃不掉了……" },
+      { "speaker": "我", "character": "player", "expression": "angry", "text": "就算拼尽性命，我也要护你周全！" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "cry", "text": "我不想让你受伤……我宁愿自己投降……" },
+      { "speaker": "我", "character": "player", "expression": "mad", "text": "住口！你说过要相信我！" },
+      { "speaker": "猪灵将军", "character": "piglin", "expression": "piglin", "text": "废话少说，准备攻击！" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "cry", "text": "不要……不要离开我……我求你了……" },
+      { "speaker": "我", "character": "player", "expression": "shy", "text": "我就在你身边，谁也别想把你带走。" },
+      { "speaker": "旁白", "character": "purple_crack", "expression": "purple_crack", "text": "（天色突然暗了下来，一道紫色的传送裂缝在远方撕开）", "sound": "minecraft:entity.lightning_bolt.thunder" },
+      { "speaker": "malgosha", "character": "malgosha_normal", "expression": "malgosha_normal", "text": "……又是你，绿袍的废物。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "fear", "text": "玛…玛戈莎？！你怎么亲自来了？" },
+      { "speaker": "malgosha", "character": "malgosha_angry", "expression": "malgosha_angry", "text": "背叛我的人……没有资格苟活。" },
+      { "speaker": "我", "character": "player", "expression": "angry", "text": "如果你要动他，先从我尸体上踏过去！" },
+      { "speaker": "malgosha", "character": "malgosha_angry", "expression": "malgosha_angry", "text": "很好。那就让我看看，你的“爱”，能否抵挡一军之怒。" },
+      { "speaker": "旁白", "character": "piglin_army2", "expression": "piglin_army2", "text": "（最终决战即将开始……）" }
+    ]
+  },
+  {
+    "sceneId": "wanted_abandon_scene",
+    "lines": [
+      { "speaker": "绿袍村民", "character": "villager", "expression": "normal", "text": "……你真的……不救我吗？" },
+      { "speaker": "我", "character": "player", "expression": "normal", "text": "对不起，我……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "mad", "text": "别说对不起！你根本不懂我经历了什么！" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "angry", "text": "我曾以为……你是不同的……你会站在我这边……" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "crying", "text": "我好傻……真的好傻……" },
+      { "speaker": "旁白", "character": "villager", "expression": "crying", "text": "（他瘫倒在地，手指微微颤抖）" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "crying", "text": "你走吧……趁我还舍不得杀你。" },
+      { "speaker": "猪灵将军", "character": "piglin", "expression": "piglin", "text": "目标确认。活捉对象。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "crying", "text": "不要！你们不要碰我！！" },
+      { "speaker": "猪灵将军", "character": "piglin", "expression": "piglin", "text": "闭嘴，罪犯。" },
+      { "speaker": "我", "character": "player", "expression": "sad", "text": "……" },
+      { "speaker": "绿袍村民", "character": "desperate_farewell", "expression": "desperate_farewell", "text": "（他在你面前被拖走，眼神空洞）" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "crying", "text": "我不会原谅你的……哪怕死，也不会……" },
+      { "speaker": "旁白", "character": "desperate_farewell", "expression": "desperate_farewell", "text": "（你静静地站着，风声中，只剩回荡的哭声）" }
+    ]
+  },
+  {
+    "sceneId": "marriage_scene",
+    "lines": [
+      { "speaker": "绿袍村民", "character": "villager", "expression": "happy", "text": "今天……终于到了这一天了呢。" },
+      { "speaker": "我", "character": "player", "expression": "shy", "text": "嗯……我已经准备好了。" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "shy", "text": "虽然我不是很懂人类的仪式……但我想用我最真诚的心。" },
+      { "speaker": "旁白", "character": "villager", "expression": "normal", "text": "（微风吹动着他的绿袍，他略显紧张地把一枚手工编织的戒指递给你）" },
+      { "speaker": "绿袍村民", "character": "villager", "expression": "hug", "text": "无论今后怎样，我想与你并肩同行……可以吗？" },
+      { "speaker": "我", "character": "player", "expression": "cry", "text": "……当然可以。" },
+      { "speaker": "旁白", "character": "villager", "expression": "happy", "text": "（你们交换了戒指，四周响起了温暖的掌声）", "sound": "minecraft:entity.player.levelup" },
+
+      { "speaker": "男孩", "character": "red", "expression": "red", "text": "……恭喜你们。虽然……心里有点怪怪的。" },
+      { "speaker": "姐姐", "character": "blue", "expression": "blue", "text": "哈哈哈！太好了！你们一定要幸福哦！" },
+      { "speaker": "垃圾侠", "character": "pink", "expression": "pink", "text": "咳咳，虽然我不懂浪漫，但……祝福你们！" },
+      { "speaker": "Steve", "character": "steve", "expression": "steve", "text": "嘿嘿！真是令人羡慕的一对！" },
+      { "speaker": "黑人姐", "character": "black", "expression": "black", "text": "祝你们一路走到最后～幸福万岁！" },
+
+      { "speaker": "绿袍村民", "character": "villager", "expression": "cry", "text": "……谢谢大家，我真的，从未像现在这样幸福过……" },
+      { "speaker": "我", "character": "player", "expression": "happy", "text": "今后，也请大家多多关照我们。" },
+      { "speaker": "旁白", "character": "embrace", "expression": "embrace", "text": "（在亲友们的见证下，你们紧紧相拥，未来的旅途，就此启航）" }
+    ]
+  }
+]

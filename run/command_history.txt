@@ -1,0 +1,50 @@
+/summon villager:a
+/time set 1
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/weather clear
+/kill @e[type=!minecraft:player]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=villager:exclamation
+/kill @e[type=villager:exclamation]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player,type=!minecraft:villager]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player,type=!minecraft:villager]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player,type=!minecraft:villager]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/time set 1000
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player,type=!minecraft:villager]
+/kill @e[type=!minecraft:player]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player,type=!minecraft:villager]
+/kill @e[type=!minecraft:player]
+/kill @e
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player,type=!minecraft:villager]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player,type=!minecraft:villager]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e[type=!minecraft:player,type=!minecraft:villager]
+/kill @e[type=!minecraft:player]
+/kill @e[type=!minecraft:player,type=!minecraft:villager]
+/kill @e[type=!minecraft:player]
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/time add 100
+/time add 100d
+/time set day
+/kill @e
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
