@@ -1,5 +1,7 @@
-[16:39:09] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.1 with Fabric Loader 0.16.12
-[16:39:09] [main/INFO] (FabricLoader) Loading 56 mods:
+[21:49:42] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.1 with Fabric Loader 0.16.12
+[21:49:43] [main/INFO] (FabricLoader) Loading 58 mods:
+	- cloth-basic-math 0.6.1
+	- cloth-config 15.0.140
 	- fabric-api 0.115.4+1.21.1
 	- fabric-api-base 0.4.42+6573ed8c19
 	- fabric-api-lookup-api-v1 1.6.70+b559734419
@@ -56,127 +58,122 @@
 	- minecraft 1.21.1
 	- mixinextras 0.4.1
 	- villager 1.0
-[16:39:10] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/E:/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.4+mixin.0.8.7/6a12aacc794f1078458433116e9ed42c1cc98096/sponge-mixin-0.15.4+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[16:39:10] [main/INFO] (FabricLoader/Mixin) Attempting to load Hot-Swap agent
-[16:39:10] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[16:39:10] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[16:39:10] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
-[16:39:10] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
-[16:39:11] [Datafixer Bootstrap/INFO] (Minecraft) 226 Datafixer optimizations took 155 milliseconds
-[16:39:15] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[16:39:15] [Render thread/INFO] (Minecraft) Setting user: Player697
-[16:39:15] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[16:39:15] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3-snapshot
-[16:39:16] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-blockrenderlayer-v1, fabric-client-tags-api-v1, fabric-command-api-v1, fabric-command-api-v2, fabric-commands-v0, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-keybindings-v0, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-renderer-registries-v1, fabric-rendering-data-attachment-v1, fabric-rendering-fluids-v1, fabric-rendering-v0, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-sound-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, villager
-[16:39:16] [Worker-Main-13/INFO] (Minecraft) Found unifont_all_no_pua-15.1.05.hex, loading
-[16:39:16] [Worker-Main-25/INFO] (Minecraft) Found unifont_jp_patch-15.1.05.hex, loading
-[16:39:16] [Worker-Main-9/ERROR] (GeckoLib) Unable to parse animation: geckolib_format_version
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: java.lang.IllegalStateException: Not a JSON Object: 2
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.JsonElement.getAsJsonObject(JsonElement.java:101)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.loading.json.typeadapter.BakedAnimationsAdapter.deserialize(BakedAnimationsAdapter.java:41)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.loading.json.typeadapter.BakedAnimationsAdapter.deserialize(BakedAnimationsAdapter.java:31)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.Gson.fromJson(Gson.java:1227)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.Gson.fromJson(Gson.java:1329)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.Gson.fromJson(Gson.java:1271)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.loading.FileLoader.loadAnimationsFile(FileLoader.java:36)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.cache.GeckoLibCache.lambda$loadAnimations$2(GeckoLibCache.java:79)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.cache.GeckoLibCache.lambda$loadResources$8(GeckoLibCache.java:121)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1310)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1841)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1806)
-[16:39:16] [Worker-Main-9/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
-[16:39:17] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[16:39:17] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[16:39:17] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on AG276QSD (NVIDIA High Definition Audio)
-[16:39:17] [Render thread/INFO] (Minecraft) Sound engine started
-[16:39:17] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[16:39:17] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[16:39:17] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[16:39:17] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[16:39:17] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[16:39:17] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[16:39:17] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[16:39:17] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[16:39:17] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[16:39:18] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[16:39:18] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
-[16:39:18] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[16:39:18] [Render thread/INFO] (Minecraft) Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
-[16:39:18] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
-[16:39:18] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[16:39:22] [Render thread/INFO] (Minecraft) Loaded 1290 recipes
-[16:39:23] [Render thread/INFO] (Minecraft) Loaded 1399 advancements
-[16:39:23] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 1.009 ms
-[16:39:23] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.21.1
-[16:39:23] [Server thread/INFO] (Minecraft) Generating keypair
-[16:39:23] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[16:39:24] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
-[16:39:24] [Render thread/INFO] (Minecraft) Time elapsed: 325 ms
-[16:39:24] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[16:39:24] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[16:39:24] [Server thread/INFO] (Minecraft) Player697[local:E:627c9d96] logged in with entity id 45 at (34.86615632227732, 70.61165215165263, 31.069646006677047)
-[16:39:24] [Server thread/INFO] (Minecraft) Player697加入了游戏
-[16:39:25] [Render thread/INFO] (Minecraft) Loaded 3 advancements
-[16:39:25] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:25] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:26] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:26] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:27] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:27] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:27] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:27] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:28] [Render thread/WARN] (GeckoLib) Particle Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:28] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:28] [Render thread/WARN] (GeckoLib) Particle Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:28] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:28] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:28] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:28] [Render thread/WARN] (GeckoLib) Particle Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:29] [Render thread/WARN] (GeckoLib) Sound Keyframe found for PickaxePiglinEntity -> attack_controller, but no keyframe handler registered
-[16:39:29] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:29] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:29] [Render thread/WARN] (GeckoLib) Particle Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:29] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> main_controller, but no keyframe handler registered
-[16:39:30] [Server thread/INFO] (Minecraft) [STDOUT]: 80
-[16:39:31] [Server thread/INFO] (Minecraft) [STDOUT]: 80
-[16:39:34] [Server thread/INFO] (Minecraft) [STDOUT]: 80
-[16:39:45] [Server thread/INFO] (Minecraft) [STDOUT]: 80
-[16:39:54] [Render thread/WARN] (GeckoLib) Sound Keyframe found for DrumPiglinEntity -> attack_controller, but no keyframe handler registered
-[16:39:54] [Render thread/WARN] (GeckoLib) Sound Keyframe found for PiglinGeneralEntity -> spin_controller, but no keyframe handler registered
-[16:39:54] [Server thread/INFO] (Minecraft) Villager VillagerEntity['傻子'/9, l='ServerLevel[新的世界]', x=36.69, y=70.00, z=25.15] died, message: '%1$s被%2$s杀死了'
-[16:39:54] [Render thread/INFO] (Minecraft) Villager VillagerEntity['傻子'/9, l='ClientLevel', x=36.69, y=70.00, z=25.15] died, message: '傻子死了'
-[16:39:54] [Render thread/WARN] (GeckoLib) Sound Keyframe found for PiglinGeneralEntity -> spin_controller, but no keyframe handler registered
-[16:39:54] [Render thread/WARN] (GeckoLib) Particle Keyframe found for PiglinGeneralEntity -> spin_controller, but no keyframe handler registered
-[16:39:58] [Render thread/WARN] (GeckoLib) Particle Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:58] [Render thread/WARN] (GeckoLib) Sound Keyframe found for DrumPiglinEntity -> drum_controller, but no keyframe handler registered
-[16:39:58] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:58] [Render thread/WARN] (GeckoLib) Particle Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:59] [Render thread/WARN] (GeckoLib) Sound Keyframe found for DrumPiglinEntity -> drum_controller, but no keyframe handler registered
-[16:39:59] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:59] [Render thread/WARN] (GeckoLib) Particle Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:59] [Render thread/WARN] (GeckoLib) Sound Keyframe found for DrumPiglinEntity -> drum_controller, but no keyframe handler registered
-[16:39:59] [Render thread/WARN] (GeckoLib) Sound Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:39:59] [Render thread/WARN] (GeckoLib) Particle Keyframe found for GreatHogEntity -> attack_controller, but no keyframe handler registered
-[16:40:18] [Server thread/INFO] (Minecraft) [STDOUT]: 100
-[16:40:29] [Server thread/INFO] (Minecraft) [STDOUT]: 100
-[16:40:30] [Server thread/INFO] (Minecraft) [STDOUT]: 100
-[16:40:32] [Render thread/INFO] (Minecraft) [STDOUT]: bug
-[16:40:34] [Server thread/INFO] (Minecraft) [STDOUT]: 100
-[16:40:49] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[16:40:49] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[16:40:49] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[16:40:49] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[16:40:53] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[16:40:53] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[16:40:53] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[16:40:53] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[16:41:51] [Render thread/INFO] (Minecraft) Loaded 16 advancements
-[16:42:10] [Server thread/INFO] (Minecraft) Villager VillagerEntity['傻子'/5, l='ServerLevel[新的世界]', x=38.52, y=70.00, z=30.00] died, message: '傻子被僵尸杀死了'
-[16:42:18] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[16:42:18] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[16:42:18] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[16:42:18] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[21:49:43] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/E:/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.4+mixin.0.8.7/6a12aacc794f1078458433116e9ed42c1cc98096/sponge-mixin-0.15.4+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[21:49:43] [main/INFO] (FabricLoader/Mixin) Attempting to load Hot-Swap agent
+[21:49:43] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[21:49:43] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[21:49:43] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
+[21:49:44] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[21:49:45] [Datafixer Bootstrap/INFO] (Minecraft) 226 Datafixer optimizations took 186 milliseconds
+[21:49:49] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[21:49:49] [Render thread/INFO] (Minecraft) Setting user: Player111
+[21:49:49] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[21:49:50] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3-snapshot
+[21:49:51] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric, cloth-config, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-blockrenderlayer-v1, fabric-client-tags-api-v1, fabric-command-api-v1, fabric-command-api-v2, fabric-commands-v0, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-keybindings-v0, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-renderer-registries-v1, fabric-rendering-data-attachment-v1, fabric-rendering-fluids-v1, fabric-rendering-v0, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-sound-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, villager
+[21:49:51] [Worker-Main-13/INFO] (Minecraft) Found unifont_all_no_pua-15.1.05.hex, loading
+[21:49:51] [Worker-Main-15/INFO] (Minecraft) Found unifont_jp_patch-15.1.05.hex, loading
+[21:49:51] [Worker-Main-7/ERROR] (GeckoLib) Unable to parse animation: geckolib_format_version
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: java.lang.IllegalStateException: Not a JSON Object: 2
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.JsonElement.getAsJsonObject(JsonElement.java:101)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.loading.json.typeadapter.BakedAnimationsAdapter.deserialize(BakedAnimationsAdapter.java:41)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.loading.json.typeadapter.BakedAnimationsAdapter.deserialize(BakedAnimationsAdapter.java:31)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.Gson.fromJson(Gson.java:1227)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.Gson.fromJson(Gson.java:1329)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.Gson.fromJson(Gson.java:1271)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.loading.FileLoader.loadAnimationsFile(FileLoader.java:36)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.cache.GeckoLibCache.lambda$loadAnimations$2(GeckoLibCache.java:79)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.cache.GeckoLibCache.lambda$loadResources$8(GeckoLibCache.java:121)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run$$$capture(CompletableFuture.java:1768)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at --- Async.Stack.Trace --- (captured by IntelliJ IDEA debugger)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.<init>(CompletableFuture.java:1754)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.CompletableFuture.asyncSupplyStage(CompletableFuture.java:1782)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.CompletableFuture.supplyAsync(CompletableFuture.java:2005)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.cache.GeckoLibCache.lambda$loadResources$9(GeckoLibCache.java:121)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinTask.doExec$$$capture(ForkJoinTask.java:387)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1310)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1841)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1806)
+[21:49:51] [Worker-Main-7/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+[21:49:52] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[21:49:52] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[21:49:52] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on AG276QSD (NVIDIA High Definition Audio)
+[21:49:52] [Render thread/INFO] (Minecraft) Sound engine started
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[21:49:52] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[21:49:52] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[21:49:56] [Render thread/INFO] (Minecraft) Loaded 1290 recipes
+[21:49:56] [Render thread/INFO] (Minecraft) Loaded 1399 advancements
+[21:49:57] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 1.546 ms
+[21:49:57] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.21.1
+[21:49:57] [Server thread/INFO] (Minecraft) Generating keypair
+[21:49:58] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[21:49:58] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[21:49:58] [Render thread/INFO] (Minecraft) Time elapsed: 399 ms
+[21:49:58] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[21:49:58] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[21:49:59] [Server thread/INFO] (Minecraft) Player111[local:E:89d10238] logged in with entity id 47 at (71.6521461141037, 71.0, 34.032012012947526)
+[21:49:59] [Server thread/INFO] (Minecraft) Player111加入了游戏
+[21:49:59] [Server thread/INFO] (Minecraft) Player111取得了进度[钻石！]
+[21:49:59] [Server thread/INFO] (Minecraft) Player111取得了进度[来硬的]
+[21:49:59] [Render thread/INFO] (Minecraft) [System] [CHAT] Player111取得了进度[钻石！]
+[21:49:59] [Render thread/INFO] (Minecraft) [System] [CHAT] Player111取得了进度[来硬的]
+[21:49:59] [Render thread/INFO] (Minecraft) Loaded 64 advancements
+[21:50:02] [Server thread/INFO] (Minecraft) [STDOUT]: 100
+[21:50:04] [Render thread/INFO] (Minecraft) [STDOUT]: bug
+[21:50:07] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[21:50:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[21:50:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[21:50:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[21:51:08] [Render thread/INFO] (Minecraft) Loaded 84 advancements
+[21:51:29] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[21:51:29] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[21:51:29] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[21:51:29] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[21:51:44] [Render thread/INFO] (Minecraft) Loaded 120 advancements
+[21:51:46] [Render thread/INFO] (Minecraft) Loaded 121 advancements
+[21:51:50] [Server thread/INFO] (Minecraft) [STDOUT]: 100
+[21:51:53] [Server thread/INFO] (Minecraft) [STDOUT]: 100
+[21:52:05] [Server thread/INFO] (Minecraft) [STDOUT]: 100
+[21:52:08] [Server thread/INFO] (Minecraft) [STDOUT]: 97
+[21:52:21] [Server thread/INFO] (Minecraft) [STDOUT]: 97
+[21:52:23] [Server thread/INFO] (Minecraft) [STDOUT]: 97
+[21:52:23] [Server thread/INFO] (Minecraft) [STDOUT]: 97
+[21:52:24] [Server thread/INFO] (Minecraft) [STDOUT]: 97
+[21:52:25] [Server thread/INFO] (Minecraft) [STDOUT]: 97
+[21:52:26] [Server thread/INFO] (Minecraft) [STDOUT]: 97
+[21:52:26] [Server thread/INFO] (Minecraft) [STDOUT]: 97
+[21:52:27] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[21:52:27] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[21:52:27] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[21:52:27] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[21:52:27] [Server thread/INFO] (Minecraft) Player111 lost connection: 连接中断
+[21:52:27] [Server thread/INFO] (Minecraft) Player111退出了游戏
+[21:52:27] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[21:52:27] [Server thread/INFO] (Minecraft) Stopping server
+[21:52:27] [Server thread/INFO] (Minecraft) Saving players
+[21:52:27] [Server thread/INFO] (Minecraft) Saving worlds
+[21:52:27] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[21:52:27] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[21:52:27] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[21:52:27] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (新的世界 (2)): All chunks are saved
+[21:52:27] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:52:27] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:52:27] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[21:52:28] [Render thread/INFO] (Minecraft) Stopping!

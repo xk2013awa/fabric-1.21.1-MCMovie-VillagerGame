@@ -1,16 +1,21 @@
 package com.villager.screen;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.villager.access.VillagerFriendshipAccess;
+import com.villager.ai.AIConfig;
 import com.villager.data.DialogData;
 import com.villager.network.payload.*;
+import me.shedaniel.autoconfig.AutoConfig;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.item.ItemStack;
@@ -19,6 +24,7 @@ import net.minecraft.resource.Resource;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.OrderedText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -26,6 +32,12 @@ import net.minecraft.util.math.BlockPos;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
+import java.net.InetSocketAddress;
+import java.net.ProxySelector;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
@@ -144,6 +156,12 @@ public class VillagerScreen extends Screen {
 
     private ButtonWidget marryButton;
 
+    private ButtonWidget aiChatToggleButton;
+
+
+    private TextFieldWidget inputField;
+    private ButtonWidget sendButton;
+
     public VillagerScreen(VillagerEntity villager) {
         super(Text.of("Villager"));
         this.villager = villager;
@@ -152,7 +170,6 @@ public class VillagerScreen extends Screen {
     @Override
     protected void init() {
         super.init();
-
         VillagerFriendshipAccess access = (VillagerFriendshipAccess) villager;
 
         ClientPlayNetworking.send(
@@ -182,11 +199,42 @@ public class VillagerScreen extends Screen {
         marryButton = this.addDrawableChild(ButtonWidget.builder(Text.of("结婚"), b -> marry())
                 .position(10, yOffset).size(60, 20).build());
 
+        inputField = new TextFieldWidget(MinecraftClient.getInstance().textRenderer,
+                10,  30, 200, 20, Text.of("输入对话..."));
+        inputField.setMaxLength(200);
+        inputField.setPlaceholder(Text.of("输入对话..."));
+        this.addDrawableChild(inputField);
+
+        sendButton = ButtonWidget.builder(Text.of("发送"), btn -> {
+            String userInput = inputField.getText();
+            if (!userInput.isEmpty()) {
+                sendChatRequest(userInput);
+                inputField.setText("");
+            }
+        }).position(10, 55).size(50, 20).build();
+        this.addDrawableChild(sendButton);
+        inputField.setVisible(false);
+        sendButton.visible = false;
+
+        yOffset -= 25;
+
+        aiChatToggleButton = this.addDrawableChild(ButtonWidget.builder(Text.of("自由对话"), b -> {
+            chatButton.visible = false;
+            giftButton.visible = false;
+            flirtButton.visible = false;
+            confessButton.visible = false;
+            marryButton.visible = false;
+            aiChatToggleButton.visible = false;
+            inputField.setVisible(true);
+            sendButton.visible = true;
+        }).position(10, yOffset).size(60, 20).build());
+
         boolean confessed = access.hasConfessed();
         boolean married = access.isMarried();
 
         confessButton.visible = !married;
         marryButton.visible = confessed && !married;
+        aiChatToggleButton.visible = married;
 
         if (((VillagerFriendshipAccess) villager).getFriendshipLevel() >= 100) {
             setExpression("villager", "happy");
@@ -219,6 +267,75 @@ public class VillagerScreen extends Screen {
         showConversationButtons(false);
 
         tryStartSpecialScene();
+    }
+
+    AIConfig config = AutoConfig.getConfigHolder(AIConfig.class).getConfig();
+
+    private void sendChatRequest(String userInput) {
+        FEEDBACK = "正在思考...";
+        HttpClient client = HttpClient.newBuilder()
+                .proxy(config.proxy == null || config.proxy.isBlank()
+                        ? ProxySelector.getDefault()
+                        : ProxySelector.of(parseProxyAddress(config.proxy)))
+                .build();
+
+        String body = """
+        {
+          "model": "%s",
+          "messages": [
+            {"role": "user", "content": "%s"}
+          ],
+          "temperature": %.2f
+        }
+        """.formatted(config.model, userInput, config.temperature);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(config.baseUrl + "/chat/completions"))
+                .header("Authorization", "Bearer " + config.apiKey)
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(body))
+                .build();
+
+        client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+                .thenAccept(response -> {
+                    String reply = parseReply(response.body());
+                    MinecraftClient.getInstance().execute(() -> {
+                        FEEDBACK = reply;
+                        setExpression("villager", "happy");
+                    });
+                })
+                .exceptionally(e -> {
+                    e.printStackTrace();
+                    MinecraftClient.getInstance().execute(() -> {
+                        FEEDBACK = "请求失败: " + e.getMessage();
+                        setExpression("villager", "sad");
+                    });
+                    return null;
+                });
+    }
+
+    private String parseReply(String json) {
+        try {
+            JsonObject obj = JsonParser.parseString(json).getAsJsonObject();
+            return obj.getAsJsonArray("choices")
+                    .get(0).getAsJsonObject()
+                    .getAsJsonObject("message")
+                    .get("content").getAsString();
+        } catch (Exception e) {
+            return "解析失败";
+        }
+    }
+
+    private InetSocketAddress parseProxyAddress(String proxy) {
+        try {
+            String[] parts = proxy.split(":", 2);
+            String host = parts[0];
+            int port = Integer.parseInt(parts[1]);
+            return new InetSocketAddress(host, port);
+        } catch (Exception e) {
+            System.err.println("代理地址格式错误，应为 host:port，如 127.0.0.1:7890");
+            return InetSocketAddress.createUnresolved("localhost", 1080); // fallback
+        }
     }
 
     private void tryStartSpecialScene() {
@@ -584,6 +701,7 @@ public class VillagerScreen extends Screen {
         marryButton.visible = false;
     }
 
+
     public void setExpression(String character, String expression) {
         Map<String, Identifier> map;
         if (character.equals("villager")) {
@@ -665,7 +783,14 @@ public class VillagerScreen extends Screen {
         TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
 
         int boxWidth = 300;
-        int boxHeight = 50;
+        int maxTextWidth = 280;
+        List<OrderedText> wrappedLines = textRenderer.wrapLines(Text.of(FEEDBACK), maxTextWidth);
+        int lineHeight = textRenderer.fontHeight + 2;
+        // 上下边距
+        int dynamicHeight = wrappedLines.size() * lineHeight + 20;
+        // 最多不超过屏幕一半
+        int boxHeight = Math.max(50, Math.min(dynamicHeight, this.height / 2));
+
         int x1 = (this.width - boxWidth) / 2;
         int y1 = this.height - boxHeight - 10;
         int x2 = x1 + boxWidth;
@@ -673,9 +798,8 @@ public class VillagerScreen extends Screen {
 
         context.fill(x1, y1, x2, y2, 0x80000000);
 
-        int margin = 10;
-        int textX = x1 + margin;
-        int textY = y1 + margin;
+        int textX = x1 + 10;
+        int textY = y1 + 10;
 
         if (inCutscene) {
             SceneLine l = sceneLines.get(sceneIndex);
@@ -686,15 +810,16 @@ public class VillagerScreen extends Screen {
                     prefix + l.text,
                     textX, textY, 0xFFFFFF, false);
             return;
-        }
-
-        if (isChatting) {
+        }else if (isChatting) {
             context.drawText(textRenderer, conversationTopic, textX, textY, 0xFFFFFF, false);
             textY += 15;
         }
 
         if (!FEEDBACK.isEmpty()) {
-            context.drawText(textRenderer, FEEDBACK, textX, textY, 0xFFFFFF, false);
+            for (OrderedText line : wrappedLines) {
+                context.drawText(textRenderer, line, textX, textY, 0xFFFFFF, false);
+                textY += lineHeight;
+            }
         }
     }
 

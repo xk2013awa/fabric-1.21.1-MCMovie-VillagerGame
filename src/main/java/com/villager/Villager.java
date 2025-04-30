@@ -1,8 +1,11 @@
 package com.villager;
 
+import com.villager.ai.AIConfig;
 import com.villager.entity.ModEntities;
 import com.villager.network.ModNetworking;
 import com.villager.network.payload.*;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 
@@ -31,6 +34,7 @@ public class Villager implements ModInitializer {
         PayloadTypeRegistry.playC2S().register(PiglinAmbushC2SPayload.ID, PiglinAmbushC2SPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(VillagerSetProtectedC2SPayload.ID, VillagerSetProtectedC2SPayload.CODEC);
 
+        AutoConfig.register(AIConfig.class, Toml4jConfigSerializer::new);
 
         ModNetworking.registerC2SHandlers();
         ModEntities.registerEntities();
