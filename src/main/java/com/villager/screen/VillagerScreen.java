@@ -172,6 +172,9 @@ public class VillagerScreen extends Screen {
         super.init();
         VillagerFriendshipAccess access = (VillagerFriendshipAccess) villager;
 
+        boolean confessed = access.hasConfessed();
+        boolean married = access.isMarried();
+
         ClientPlayNetworking.send(
                 new VillagerAiDisableC2SPayload(villager.getId(), true)
         );
@@ -228,9 +231,6 @@ public class VillagerScreen extends Screen {
             inputField.setVisible(true);
             sendButton.visible = true;
         }).position(10, yOffset).size(60, 20).build());
-
-        boolean confessed = access.hasConfessed();
-        boolean married = access.isMarried();
 
         confessButton.visible = !married;
         marryButton.visible = confessed && !married;
@@ -347,7 +347,7 @@ public class VillagerScreen extends Screen {
             return;
         }
 
-        if (friendship >= 80 && friendship < 100) {
+        if (friendship >= 80 && friendship < 100 && !access.isMarried()) {
             pendingLongStoryConfirm = true;
             showActionButtons(false);
             showConversationButtons(true);
@@ -694,7 +694,7 @@ public class VillagerScreen extends Screen {
     public void marry() {
         VillagerFriendshipAccess access = (VillagerFriendshipAccess) villager;
         access.setMarried(true);
-
+        ClientPlayNetworking.send(new VillagerMarryC2SPayload(villager.getId(), true));
         startScene("marriage_scene");
 
         confessButton.visible = false;

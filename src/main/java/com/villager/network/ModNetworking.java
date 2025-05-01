@@ -32,6 +32,20 @@ public class ModNetworking {
 
 
     public static void registerC2SHandlers() {
+        ServerPlayNetworking.registerGlobalReceiver(VillagerMarryC2SPayload.ID, (payload, context) -> {
+            ServerPlayerEntity player = context.player();
+            int villagerId = payload.villagerID();
+            boolean married   = payload.married();
+
+            Objects.requireNonNull(player.getServer()).execute(() -> {
+                var entity = player.getWorld().getEntityById(villagerId);
+                if (entity instanceof VillagerEntity villager) {
+                    VillagerFriendshipAccess access = (VillagerFriendshipAccess) villager;
+                    access.setMarried(married);
+                }
+            });
+        });
+
         ServerPlayNetworking.registerGlobalReceiver(FriendshipC2SPayload.ID, (payload, context) -> {
             ServerPlayerEntity player = context.player();
             int villagerId = payload.villagerID();

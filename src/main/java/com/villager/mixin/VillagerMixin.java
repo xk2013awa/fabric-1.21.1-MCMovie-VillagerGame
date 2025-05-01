@@ -116,6 +116,7 @@ public class VillagerMixin implements VillagerFriendshipAccess {
         redExclamationId = null;
     }
 
+    @Unique
     private boolean villagerHasConfessed = false;
 
     @Override
@@ -128,38 +129,44 @@ public class VillagerMixin implements VillagerFriendshipAccess {
         this.villagerHasConfessed = confessed;
     }
 
-    private boolean villagerMarried = false;
+    private static final TrackedData<Boolean> MARRIED =
+            DataTracker.registerData(VillagerEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     @Override
     public boolean isMarried() {
-        return villagerMarried;
+        return self.getDataTracker().get(MARRIED);
     }
 
     @Override
     public void setMarried(boolean married) {
-        this.villagerMarried = married;
+        self.getDataTracker().set(MARRIED, married);
     }
 
     @Inject(method = "initDataTracker", at = @At("TAIL"))
     private void injectInitDataTracker(DataTracker.Builder builder, CallbackInfo ci) {
         builder.add(FRIENDSHIP_LEVEL, 0);
         builder.add(AI_DISABLED, false);
+        builder.add(MARRIED, false);
     }
 
-    @Inject(method = "writeCustomDataToNbt", at = @At("HEAD"))
+    @Inject(method = "writeCustomDataToNbt", at = @At("TAIL"))
     private void injectWriteNbt(NbtCompound nbt, CallbackInfo ci) {
         nbt.putInt("FriendshipLevel", self.getDataTracker().get(FRIENDSHIP_LEVEL));
+        nbt.putBoolean("AIDisabled", self.getDataTracker().get(AI_DISABLED));
         nbt.putLong("LastGiftReceivedTime", this.lastGiftReceivedTime);
         nbt.putLong("VillagerLastDay", this.lastDay);
         nbt.putInt("VillagerDailyGained", this.dailyGainedFriendship);
+        nbt.putBoolean("VillagerMarried", self.getDataTracker().get(MARRIED));
     }
 
-    @Inject(method = "readCustomDataFromNbt", at = @At("HEAD"))
+    @Inject(method = "readCustomDataFromNbt", at = @At("TAIL"))
     private void injectReadNbt(NbtCompound nbt, CallbackInfo ci) {
         self.getDataTracker().set(FRIENDSHIP_LEVEL, nbt.getInt("FriendshipLevel"));
+        self.getDataTracker().set(AI_DISABLED, nbt.getBoolean("AIDisabled"));
         this.lastGiftReceivedTime = nbt.getLong("LastGiftReceivedTime");
         this.lastDay = nbt.getLong("VillagerLastDay");
         this.dailyGainedFriendship = nbt.getInt("VillagerDailyGained");
+        self.getDataTracker().set(MARRIED, nbt.getBoolean("VillagerMarried"));
     }
 
     @Inject(

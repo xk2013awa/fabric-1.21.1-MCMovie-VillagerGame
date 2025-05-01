@@ -18,8 +18,6 @@ public class Villager implements ModInitializer {
         PayloadTypeRegistry.playC2S().register(FriendshipC2SPayload.ID, FriendshipC2SPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(VillagerEnemySummonC2SPayload.ID, VillagerEnemySummonC2SPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(VillagerAiDisableC2SPayload.ID, VillagerAiDisableC2SPayload.CODEC);
-
-
         PayloadTypeRegistry.playC2S().register(SetBlasterPosC2SPayload.ID, SetBlasterPosC2SPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(ShootFireballC2SPayload.ID, ShootFireballC2SPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(MeleeAttackC2SPayload.ID, MeleeAttackC2SPayload.CODEC);
@@ -33,6 +31,7 @@ public class Villager implements ModInitializer {
         PayloadTypeRegistry.playC2S().register(ParticlesC2SPayload.ID, ParticlesC2SPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(PiglinAmbushC2SPayload.ID, PiglinAmbushC2SPayload.CODEC);
         PayloadTypeRegistry.playC2S().register(VillagerSetProtectedC2SPayload.ID, VillagerSetProtectedC2SPayload.CODEC);
+        PayloadTypeRegistry.playC2S().register(VillagerMarryC2SPayload.ID, VillagerMarryC2SPayload.CODEC);
 
         AutoConfig.register(AIConfig.class, Toml4jConfigSerializer::new);
 
