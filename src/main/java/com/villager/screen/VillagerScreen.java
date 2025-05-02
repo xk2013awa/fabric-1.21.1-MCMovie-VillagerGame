@@ -273,6 +273,7 @@ public class VillagerScreen extends Screen {
 
     private void sendChatRequest(String userInput) {
         FEEDBACK = "正在思考...";
+        String systemPrompt = "你是一只猫娘，返回的文字都要带有“喵~”";
         HttpClient client = HttpClient.newBuilder()
                 .proxy(config.proxy == null || config.proxy.isBlank()
                         ? ProxySelector.getDefault()
@@ -283,11 +284,12 @@ public class VillagerScreen extends Screen {
         {
           "model": "%s",
           "messages": [
+            {"role": "system", "content": "%s"},
             {"role": "user", "content": "%s"}
           ],
           "temperature": %.2f
         }
-        """.formatted(config.model, userInput, config.temperature);
+        """.formatted(config.model, systemPrompt, userInput, config.temperature);
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(config.baseUrl + "/chat/completions"))
