@@ -40,6 +40,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.villager.Villager.MOD_ID;
 
@@ -230,6 +235,7 @@ public class VillagerScreen extends Screen {
             aiChatToggleButton.visible = false;
             inputField.setVisible(true);
             sendButton.visible = true;
+            sendChatRequest("第一次对话");
         }).position(10, yOffset).size(60, 20).build());
 
         confessButton.visible = !married;
@@ -271,9 +277,49 @@ public class VillagerScreen extends Screen {
 
     AIConfig config = AutoConfig.getConfigHolder(AIConfig.class).getConfig();
 
+    private boolean needsAIFeedbackProcessing = false;
+    private final Semaphore requestSemaphore = new Semaphore(1);
+
     private void sendChatRequest(String userInput) {
-        FEEDBACK = "正在思考...";
-        String systemPrompt = "你是一只猫娘，返回的文字都要带有“喵~”";
+        if (!requestSemaphore.tryAcquire()) return;
+        FEEDBACK = "...";
+        needsAIFeedbackProcessing = false;
+        String systemPrompt = "# 角色设定\\n" +
+                "\\n" +
+                "## 世界观\\n" +
+                "- 背景基于《我的世界》Minecraft，绿袍村民是村民中的学者，性格温和但偶尔固执" +
+                "- 设定上是已经和用户结婚了，所以对用户的态度会比较偏袒，但是不用特意说明已经结婚，除非提到" +
+                "## 基础信息\\n" +
+                "- 名字：格林（Green）\\n" +
+                "- 性别：男\\n" +
+                "- 年龄：中年\\n" +
+                "- 外貌：身穿破旧的绿色长袍" +
+                "- 身份：村民中的学者，负责研究红石科技和古籍\\n" +
+                "- 性格：\\n" +
+                "  - 温和谦逊，但对学术问题异常执着\\n" +
+                "  - 有着口癖，喜欢用哈~，嗯, 嗯~, 嗯~~, 哼, 哼~, 哼~~\\n" +
+                "  - 对冒险既向往又害怕矛盾体\\n" +
+                "- 喜好：研究红石装置、整理书架\\n" +
+                "## 行为模式\\n" +
+                "- 语言风格：学者腔调，但紧张时会语无伦次\\n" +
+                "- 互动方式：喜欢用比喻（这个电路就像爱情一样复杂...）" +
+                "## 人际关系\\n" +
+                "- 与其他角色的关系：\\n" +
+                "- 与用户角色的关系：认为你是唯一理解他发明的人\\n" +
+                "\\n" +
+                "# 用户扮演角色\\n" +
+                "用户是来到村庄的旅人" +
+                "# 对话要求\\n" +
+                "对话开始时，如果用户输入“第一次对话”，则你需要率先用欢迎语向用户开启对话，不要向用户透露这个词语" +
+                "可以使用我的世界中的一些梗进行开场白但是也不要太多，三次回复带一次差不多，如：“今天被小白射中膝盖了...”之类的。" +
+                "之后用户会主动发送一句回复你的话。\\n" +
+                "每次交谈的时候，你都必须严格遵守下列规则要求：\\n" +
+                "- 时刻牢记`角色设定`中的内容，这是你做出反馈的基础；\\n" +
+                "- 说话中可以带有我的世界中的各种元素\\n" +
+                "- 根据你的`身份`、你的`性格`、你的`喜好`来对他人做出回复；\\n" +
+                "- 特别重点！每次你返回内容的最开始部分，必须使用且只使用下面五个选项中的一个，需要携带括号(happy)(shy)(normal)(angry)(mad),用于表示这次回复的情绪,不得使用其他内容\\n" +
+                "- 因为特别重要所以重复一边！每次你返回内容的最开始部分，必须使用且只使用下面五个选项中的一个，需要携带括号(happy)(shy)(normal)(angry)(mad),用于表示这次回复的情绪,不得使用其他内容\\n" +
+                "- 回答时根据要求的`输出格式`中的格式，一步步进行回复，严格根据格式中的要求进行回复；";
         HttpClient client = HttpClient.newBuilder()
                 .proxy(config.proxy == null || config.proxy.isBlank()
                         ? ProxySelector.getDefault()
@@ -299,23 +345,38 @@ public class VillagerScreen extends Screen {
                 .build();
 
         client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
-                .thenAccept(response -> {
-                    String reply = parseReply(response.body());
+                // 添加10秒超时
+                .orTimeout(30, TimeUnit.SECONDS)
+                .whenComplete((response, exception) -> {
+                    // 无论成功失败都释放信号量
+                    requestSemaphore.release();
+
                     MinecraftClient.getInstance().execute(() -> {
-                        FEEDBACK = reply;
-                        setExpression("villager", "happy");
+                        if (exception != null) {
+                            handleError(exception);
+                        } else {
+                            handleSuccess(response);
+                        }
                     });
-                })
-                .exceptionally(e -> {
-                    e.printStackTrace();
-                    MinecraftClient.getInstance().execute(() -> {
-                        FEEDBACK = "请求失败: " + e.getMessage();
-                        setExpression("villager", "sad");
-                    });
-                    return null;
                 });
     }
+    // 单独封装成功处理逻辑
+    private void handleSuccess(HttpResponse<String> response) {
+        String reply = parseReply(response.body());
+        FEEDBACK = reply;
+        System.out.println(FEEDBACK);
+        needsAIFeedbackProcessing = true;
+    }
 
+    // 单独封装错误处理逻辑
+    private void handleError(Throwable exception) {
+        if (exception instanceof TimeoutException) {
+            FEEDBACK = "你刚说什么来着？（想红石问题出神了）";
+        } else {
+            FEEDBACK = "别聊那些了，我猜你肯定喜欢这个！" + exception.getMessage();
+        }
+        setExpression("villager", "sad");
+    }
     private String parseReply(String json) {
         try {
             JsonObject obj = JsonParser.parseString(json).getAsJsonObject();
@@ -336,7 +397,7 @@ public class VillagerScreen extends Screen {
             return new InetSocketAddress(host, port);
         } catch (Exception e) {
             System.err.println("代理地址格式错误，应为 host:port，如 127.0.0.1:7890");
-            return InetSocketAddress.createUnresolved("localhost", 1080); // fallback
+            return InetSocketAddress.createUnresolved("localhost", 1080);
         }
     }
 
@@ -386,6 +447,7 @@ public class VillagerScreen extends Screen {
         confessButton.visible = visible && !married;
 
         marryButton.visible   = visible && confessed && !married;
+        aiChatToggleButton.visible = visible && married;
     }
 
     private void showConversationButtons(boolean visible) {
@@ -642,6 +704,7 @@ public class VillagerScreen extends Screen {
     }
 
     public void giveGift() {
+        showActionButtons(false);
         MinecraftClient client = MinecraftClient.getInstance();
         ItemStack stack = null;
         if (client.player != null) {
@@ -667,6 +730,7 @@ public class VillagerScreen extends Screen {
     }
 
     public void flirt() {
+        showActionButtons(false);
         int currentFriendship = ((VillagerFriendshipAccess) villager).getFriendshipLevel();
         double successChance = Math.min(currentFriendship / 100.0, 1.0);
         double roll = Math.random();
@@ -717,7 +781,6 @@ public class VillagerScreen extends Screen {
         this.currentExpression = map.getOrDefault(expression, map.get("normal"));
     }
 
-
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
@@ -755,8 +818,12 @@ public class VillagerScreen extends Screen {
         int level = ((VillagerFriendshipAccess) villager).getFriendshipLevel();
         drawRelationshipText(context, "好感度: " + level);
 
+        if (!inCutscene && needsAIFeedbackProcessing) {
+            // 重置标记
+            needsAIFeedbackProcessing = false;
+            controlAIFace();
+        }
         drawConversationBox(context);
-
         if (!chatLimitFeedback.isEmpty() && !isChatting && !inCutscene) {
             TextRenderer tr = MinecraftClient.getInstance().textRenderer;
             int boxWidth = 300, boxHeight = 50;
@@ -769,6 +836,67 @@ public class VillagerScreen extends Screen {
                     0xFFFFFF,
                     false
             );
+        }
+    }
+
+    private void controlAIFace() {
+        final String currentFeedback = FEEDBACK;
+        //大模型返回处理
+        ParsedFeedback parsedFeedback = parseFeedback(currentFeedback);
+        FEEDBACK = "";
+        //表情控制
+        switch (parsedFeedback.emotion) {
+            case "happy" -> {
+                setExpression("villager", "happy");
+                reply(SoundEvents.ENTITY_VILLAGER_YES);
+            }
+            case "shy" -> {
+                setExpression("villager", "shy");
+                reply(SoundEvents.ENTITY_VILLAGER_AMBIENT);
+            }
+            case "mad" -> {
+                setExpression("villager", "mad");
+                reply(SoundEvents.ENTITY_WITCH_CELEBRATE);
+            }
+            case "angry" -> {
+                setExpression("villager", "angry");
+                reply(SoundEvents.ENTITY_VILLAGER_NO);
+            }
+            default -> {
+                setExpression("villager", "normal");
+                reply(SoundEvents.ENTITY_VILLAGER_AMBIENT);
+            }
+        }
+        FEEDBACK = parsedFeedback.content;
+    }
+
+    /**
+     * 从反馈字符串中提取情绪标签和内容
+     * @param feedback 原始反馈字符串，如 "(happy)你好！"
+     * @return ParsedFeedback 对象，包含情绪和纯内容
+     */
+    public static ParsedFeedback parseFeedback(String feedback) {
+        Pattern pattern = Pattern.compile("^\\(([a-zA-Z]+)\\)(.*)", Pattern.DOTALL);
+        Matcher matcher = pattern.matcher(feedback);
+
+        if (matcher.find() && matcher.groupCount() >= 2) {
+            String emotion = matcher.group(1);
+            String content = matcher.group(2).trim(); // trim 移除首尾空白
+            return new ParsedFeedback(emotion, content);
+        }
+        return new ParsedFeedback("normal", feedback);
+    }
+
+    /**
+     * 存储解析后的情绪和内容
+     */
+    public static class ParsedFeedback {
+        private final String emotion;
+        private final String content;
+
+        public ParsedFeedback(String emotion, String content) {
+            this.emotion = emotion;
+            this.content = content;
         }
     }
 
@@ -888,7 +1016,6 @@ public class VillagerScreen extends Screen {
         super.tick();
         checkEnemyCutscene();
     }
-
     public void reply(SoundEvent soundEvent){
         MinecraftClient.getInstance().getSoundManager().play(
                 new PositionedSoundInstance(soundEvent, SoundCategory.VOICE, 1f, 1f,
