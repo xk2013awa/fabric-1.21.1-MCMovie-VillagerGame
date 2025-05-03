@@ -1,204 +1,39 @@
-[12:39:07] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.21.1 with Fabric Loader 0.16.12
-[12:39:07] [main/INFO] (FabricLoader) Loading 58 mods:
-	- cloth-basic-math 0.6.1
-	- cloth-config 15.0.140
-	- fabric-api 0.115.4+1.21.1
-	- fabric-api-base 0.4.42+6573ed8c19
-	- fabric-api-lookup-api-v1 1.6.70+b559734419
-	- fabric-biome-api-v1 13.0.31+d527f9fd19
-	- fabric-block-api-v1 1.0.22+0af3f5a719
-	- fabric-block-view-api-v2 1.0.11+ebb2264e19
-	- fabric-blockrenderlayer-v1 1.1.52+0af3f5a719
-	- fabric-client-tags-api-v1 1.1.15+6573ed8c19
-	- fabric-command-api-v1 1.2.49+f71b366f19
-	- fabric-command-api-v2 2.2.28+6ced4dd919
-	- fabric-commands-v0 0.2.66+df3654b319
-	- fabric-content-registries-v0 8.0.18+b559734419
-	- fabric-convention-tags-v1 2.1.4+7f945d5b19
-	- fabric-convention-tags-v2 2.11.0+a406e79519
-	- fabric-crash-report-info-v1 0.2.29+0af3f5a719
-	- fabric-data-attachment-api-v1 1.4.1+9ed317f519
-	- fabric-data-generation-api-v1 20.2.28+16c4ae2519
-	- fabric-dimensions-v1 4.0.0+6fc22b9919
-	- fabric-entity-events-v1 1.7.0+2122d82819
-	- fabric-events-interaction-v0 0.7.13+ba9dae0619
-	- fabric-game-rule-api-v1 1.0.53+6ced4dd919
-	- fabric-gametest-api-v1 2.0.5+6fc22b9919
-	- fabric-item-api-v1 11.1.1+d5debaed19
-	- fabric-item-group-api-v1 4.1.7+def88e3a19
-	- fabric-key-binding-api-v1 1.0.47+0af3f5a719
-	- fabric-keybindings-v0 0.2.45+df3654b319
-	- fabric-lifecycle-events-v1 2.5.0+01d9a51c19
-	- fabric-loot-api-v2 3.0.15+3f89f5a519
-	- fabric-loot-api-v3 1.0.3+3f89f5a519
-	- fabric-message-api-v1 6.0.13+6573ed8c19
-	- fabric-model-loading-api-v1 2.0.0+fe474d6b19
-	- fabric-networking-api-v1 4.3.0+c7469b2119
-	- fabric-object-builder-api-v1 15.2.1+40875a9319
-	- fabric-particles-v1 4.0.2+6573ed8c19
-	- fabric-recipe-api-v1 5.0.14+248df81c19
-	- fabric-registry-sync-v0 5.2.0+34f5d91419
-	- fabric-renderer-api-v1 3.4.0+c705a49c19
-	- fabric-renderer-indigo 1.7.0+c705a49c19
-	- fabric-renderer-registries-v1 3.2.68+df3654b319
-	- fabric-rendering-data-attachment-v1 0.3.49+73761d2e19
-	- fabric-rendering-fluids-v1 3.1.6+1daea21519
-	- fabric-rendering-v0 1.1.71+df3654b319
-	- fabric-rendering-v1 5.0.5+df16efd019
-	- fabric-resource-conditions-api-v1 4.3.0+8dc279b119
-	- fabric-resource-loader-v0 1.3.1+5b5275af19
-	- fabric-screen-api-v1 2.0.25+8b68f1c719
-	- fabric-screen-handler-api-v1 1.3.88+b559734419
-	- fabric-sound-api-v1 1.0.23+6573ed8c19
-	- fabric-transfer-api-v1 5.4.2+c24bd99419
-	- fabric-transitive-access-wideners-v1 6.2.0+45b9699719
-	- fabricloader 0.16.12
-	- geckolib 4.7.5.1
-	- java 21
-	- minecraft 1.21.1
-	- mixinextras 0.4.1
-	- villager 1.0
-[12:39:07] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/E:/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.4+mixin.0.8.7/6a12aacc794f1078458433116e9ed42c1cc98096/sponge-mixin-0.15.4+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[12:39:07] [main/INFO] (FabricLoader/Mixin) Attempting to load Hot-Swap agent
-[12:39:07] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[12:39:07] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[12:39:07] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_21
-[12:39:09] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
-[12:39:10] [Datafixer Bootstrap/INFO] (Minecraft) 226 Datafixer optimizations took 388 milliseconds
-[12:39:14] [Render thread/INFO] (Minecraft) Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[12:39:14] [Render thread/INFO] (Minecraft) Setting user: Player667
-[12:39:14] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[12:39:15] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.3-snapshot
-[12:39:16] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric, cloth-config, fabric-api, fabric-api-base, fabric-api-lookup-api-v1, fabric-biome-api-v1, fabric-block-api-v1, fabric-block-view-api-v2, fabric-blockrenderlayer-v1, fabric-client-tags-api-v1, fabric-command-api-v1, fabric-command-api-v2, fabric-commands-v0, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-convention-tags-v2, fabric-crash-report-info-v1, fabric-data-attachment-api-v1, fabric-data-generation-api-v1, fabric-dimensions-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-game-rule-api-v1, fabric-gametest-api-v1, fabric-item-api-v1, fabric-item-group-api-v1, fabric-key-binding-api-v1, fabric-keybindings-v0, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-loot-api-v3, fabric-message-api-v1, fabric-model-loading-api-v1, fabric-networking-api-v1, fabric-object-builder-api-v1, fabric-particles-v1, fabric-recipe-api-v1, fabric-registry-sync-v0, fabric-renderer-api-v1, fabric-renderer-indigo, fabric-renderer-registries-v1, fabric-rendering-data-attachment-v1, fabric-rendering-fluids-v1, fabric-rendering-v0, fabric-rendering-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-screen-api-v1, fabric-screen-handler-api-v1, fabric-sound-api-v1, fabric-transfer-api-v1, fabric-transitive-access-wideners-v1, fabricloader, villager
-[12:39:16] [Worker-Main-13/INFO] (Minecraft) Found unifont_all_no_pua-15.1.05.hex, loading
-[12:39:16] [Worker-Main-14/INFO] (Minecraft) Found unifont_jp_patch-15.1.05.hex, loading
-[12:39:16] [Worker-Main-26/ERROR] (GeckoLib) Unable to parse animation: geckolib_format_version
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: java.lang.IllegalStateException: Not a JSON Object: 2
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.JsonElement.getAsJsonObject(JsonElement.java:101)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.loading.json.typeadapter.BakedAnimationsAdapter.deserialize(BakedAnimationsAdapter.java:41)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.loading.json.typeadapter.BakedAnimationsAdapter.deserialize(BakedAnimationsAdapter.java:31)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:76)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.Gson.fromJson(Gson.java:1227)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.Gson.fromJson(Gson.java:1329)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at knot//com.google.gson.Gson.fromJson(Gson.java:1271)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.loading.FileLoader.loadAnimationsFile(FileLoader.java:36)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.cache.GeckoLibCache.lambda$loadAnimations$2(GeckoLibCache.java:79)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at knot//software.bernie.geckolib.cache.GeckoLibCache.lambda$loadResources$8(GeckoLibCache.java:121)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1310)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1841)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1806)
-[12:39:16] [Worker-Main-26/INFO] (Minecraft) [STDERR]: 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
-[12:39:17] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[12:39:17] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[12:39:17] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on AG276QSD (NVIDIA High Definition Audio)
-[12:39:17] [Render thread/INFO] (Minecraft) Sound engine started
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
-[12:39:17] [Render thread/INFO] (Minecraft) Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
-[12:39:17] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[12:39:27] [Render thread/INFO] (Minecraft) Loaded 1290 recipes
-[12:39:27] [Render thread/INFO] (Minecraft) Loaded 1399 advancements
-[12:39:27] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 1.088 ms
-[12:39:27] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.21.1
-[12:39:27] [Server thread/INFO] (Minecraft) Generating keypair
-[12:39:27] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[12:39:27] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
-[12:39:27] [Render thread/INFO] (Minecraft) Time elapsed: 145 ms
-[12:39:27] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[12:39:27] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[12:39:28] [Server thread/INFO] (Minecraft) Player667[local:E:d6cb186a] logged in with entity id 1 at (53.84834832673391, -60.0, 73.56174640426103)
-[12:39:28] [Server thread/INFO] (Minecraft) Player667加入了游戏
-[12:39:28] [Server thread/INFO] (Minecraft) Player667取得了进度[来硬的]
-[12:39:28] [Server thread/INFO] (Minecraft) Player667取得了进度[钻石！]
-[12:39:28] [Render thread/INFO] (Minecraft) [System] [CHAT] Player667取得了进度[来硬的]
-[12:39:28] [Render thread/INFO] (Minecraft) [System] [CHAT] Player667取得了进度[钻石！]
-[12:39:28] [Render thread/INFO] (Minecraft) Loaded 64 advancements
-[12:39:54] [Server thread/INFO] (Minecraft) [STDOUT]: 100
-[12:39:57] [Render thread/INFO] (Minecraft) [STDOUT]: bug
-[12:40:00] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[12:40:00] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[12:40:00] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[12:40:00] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[12:40:00] [Server thread/INFO] (Minecraft) Player667 lost connection: 连接中断
-[12:40:00] [Server thread/INFO] (Minecraft) Player667退出了游戏
-[12:40:00] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[12:40:00] [Server thread/INFO] (Minecraft) Stopping server
-[12:40:00] [Server thread/INFO] (Minecraft) Saving players
-[12:40:00] [Server thread/INFO] (Minecraft) Saving worlds
-[12:40:00] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[12:40:00] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[12:40:00] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[12:40:00] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (新的世界 (3)): All chunks are saved
-[12:40:00] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[12:40:00] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[12:40:00] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[12:40:02] [Render thread/INFO] (Minecraft) Loaded 1290 recipes
-[12:40:02] [Render thread/INFO] (Minecraft) Loaded 1399 advancements
-[12:40:02] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 862.6 μs
-[12:40:02] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.21.1
-[12:40:02] [Server thread/INFO] (Minecraft) Generating keypair
-[12:40:02] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[12:40:02] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
-[12:40:02] [Render thread/INFO] (Minecraft) Time elapsed: 40 ms
-[12:40:02] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[12:40:02] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[12:40:02] [Server thread/INFO] (Minecraft) Player667[local:E:55af1907] logged in with entity id 25 at (53.84834832673391, -60.0, 73.56174640426103)
-[12:40:02] [Server thread/INFO] (Minecraft) Player667加入了游戏
-[12:40:02] [Render thread/INFO] (Minecraft) Loaded 64 advancements
-[12:40:38] [Server thread/INFO] (Minecraft) [STDOUT]: 97
-[12:41:17] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[12:41:18] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[12:41:18] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[12:41:18] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[12:49:13] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[12:49:14] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[12:49:14] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[12:49:14] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[12:50:02] [Server thread/INFO] (Minecraft) [STDOUT]: 77
-[12:50:07] [Server thread/INFO] (Minecraft) [STDOUT]: 97
-[12:50:10] [Server thread/INFO] (Minecraft) [STDOUT]: 100
-[12:50:13] [Server thread/INFO] (Minecraft) [STDOUT]: 100
-[12:50:28] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[12:50:28] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[12:50:28] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[12:50:28] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[12:52:13] [Server thread/INFO] (Minecraft) [STDOUT]: 100
-[12:52:14] [Server thread/INFO] (Minecraft) [STDOUT]: 97
-[12:52:16] [Server thread/INFO] (Minecraft) [STDOUT]: 99
-[12:52:18] [Server thread/INFO] (Minecraft) [STDOUT]: 99
-[12:52:20] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[12:52:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[12:52:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[12:52:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[12:52:31] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[12:52:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[12:52:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[12:52:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[13:13:20] [Server thread/INFO] (Minecraft) Player667 lost connection: 连接中断
-[13:13:20] [Server thread/INFO] (Minecraft) Player667退出了游戏
-[13:13:20] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[13:13:20] [Server thread/INFO] (Minecraft) Stopping server
-[13:13:20] [Server thread/INFO] (Minecraft) Saving players
-[13:13:20] [Server thread/INFO] (Minecraft) Saving worlds
-[13:13:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[13:13:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[13:13:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[13:13:20] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (新的世界 (3)): All chunks are saved
-[13:13:20] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[13:13:20] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[13:13:20] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[13:13:21] [Render thread/INFO] (Minecraft) Stopping!
+[00:00:08] [Render thread/INFO] (Minecraft) [STDOUT]: (exclamation)哈~这个提议真是让人兴奋！
+
+*扶了扶绿袍上的红石粉尘* 
+
+嗯~让我想想...就像在沙漠里发现水井一样令人欣喜！我觉得可以用活塞推动水流冲倒成熟的小麦，然后用漏斗收集... 
+
+*突然皱眉思考*
+
+不过这个装置可能会让小麦种子损失率达到23.75%...哼~我们得想办法优化这点！要不要现在就去我的红石实验室研究看看？
+[00:00:09] [Server thread/INFO] (Minecraft) [STDOUT]: 107
+[00:00:58] [Render thread/INFO] (Minecraft) [STDOUT]: (happy)哈~！太好了！你知道吗？我刚刚在研究一个新的红石装置，就像爱情一样需要精密的计算...(突然被绊了一下)啊！这些散落的红石粉总是...嗯~
+[00:00:58] [Server thread/INFO] (Minecraft) [STDOUT]: 110
+[00:01:41] [Render thread/INFO] (Minecraft) [STDOUT]: (mad)
+哼~！不许说我的实验室坏话！这里...这里的每一片红石粉末都在它该在的位置！嗯~~你知道吗？就像末影珍珠的轨迹一样看似杂乱实则有序...(手忙脚乱地捡起散落的红石粉)
+[00:01:41] [Server thread/INFO] (Minecraft) [STDOUT]: 105
+[00:02:06] [Server thread/INFO] (Minecraft) [STDOUT]: 105
+[00:02:08] [Server thread/INFO] (Minecraft) [STDOUT]: 105
+[00:02:09] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[00:02:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[00:02:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[00:02:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[00:02:50] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[00:02:50] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[00:02:50] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[00:02:50] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[00:02:51] [Server thread/INFO] (Minecraft) Player959 lost connection: 连接中断
+[00:02:51] [Server thread/INFO] (Minecraft) Player959退出了游戏
+[00:02:51] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[00:02:51] [Server thread/INFO] (Minecraft) Stopping server
+[00:02:51] [Server thread/INFO] (Minecraft) Saving players
+[00:02:51] [Server thread/INFO] (Minecraft) Saving worlds
+[00:02:51] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[00:02:51] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[00:02:51] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[00:02:51] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (新的世界 (3)): All chunks are saved
+[00:02:51] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[00:02:51] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[00:02:51] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[00:02:52] [Render thread/INFO] (Minecraft) Stopping!

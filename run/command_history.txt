@@ -1,16 +1,3 @@
-/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
-/kill @e[type=!minecraft:player]
-/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
-/kill @e[type=!minecraft:player]
-/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
-/kill @e[type=!minecraft:player]
-/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
-/weather clear
-/kill @e[type=!minecraft:player]
-/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
-/kill @e[type=villager:exclamation
-/kill @e[type=villager:exclamation]
-/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
 /kill @e[type=!minecraft:player]
 /summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
 /kill @e[type=!minecraft:player]
@@ -48,3 +35,16 @@
 /summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
 /time set day
 /gamerule doDaylightCycle false
+/kill 9cfc1f44-87ac-45f7-bed4-d1fa01e885ee
+/kill b586f72b-4633-4320-ad53-cc28d6f879e9
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/time add 10000d
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/time add 10000d
+/weather clear
+/kill @e
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/gamerule doDaylightCycle false
+/time add 100d

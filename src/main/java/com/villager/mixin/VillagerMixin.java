@@ -291,8 +291,13 @@ public class VillagerMixin implements VillagerFriendshipAccess {
         if (remaining <= 0) return 0;
 
         int actualAdd = Math.min(amount, remaining);
-        self.getDataTracker().set(FRIENDSHIP_LEVEL, Math.min(current + actualAdd, 100));
-        dailyGainedFriendship += actualAdd;
+        //结婚之前上限100，结婚之后无上限
+        if(self.getDataTracker().get(MARRIED)) {
+            self.getDataTracker().set(FRIENDSHIP_LEVEL, current + actualAdd);
+        }else {
+            self.getDataTracker().set(FRIENDSHIP_LEVEL, Math.min(current + actualAdd, 100));
+            dailyGainedFriendship += actualAdd;
+        }
         return actualAdd;
     }
 
@@ -352,17 +357,13 @@ public class VillagerMixin implements VillagerFriendshipAccess {
         return entity instanceof ExclamationEntity && entity.isAlive();
     }
 
-//    @Inject(method = "onDeath", at = @At("HEAD"))
-//    private void onVillagerDeath(DamageSource source, CallbackInfo ci) {
-//        if (!self.getWorld().isClient()) {
-//            removeExclamationIfPresent(exclamationId);
-//            removeExclamationIfPresent(redExclamationId);
-//            exclamationId = null;
-//            redExclamationId = null;
-//
-//            ServerWorld world = (ServerWorld) self.getWorld();
-//            world.getOtherEntities(self, self.getBoundingBox().expand(32.0), entity -> (entity instanceof ChefPiglinEntity || entity instanceof DrumPiglinEntity))
-//                    .forEach(Entity::discard);;
-//        }
-//    }
+    @Inject(method = "onDeath", at = @At("HEAD"))
+    private void onVillagerDeath(DamageSource source, CallbackInfo ci) {
+        if (!self.getWorld().isClient()) {
+            removeExclamationIfPresent(exclamationId);
+            removeExclamationIfPresent(redExclamationId);
+            exclamationId = null;
+            redExclamationId = null;
+        }
+    }
 }

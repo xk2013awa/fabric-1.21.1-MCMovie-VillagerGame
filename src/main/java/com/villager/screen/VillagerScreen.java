@@ -302,7 +302,7 @@ public class VillagerScreen extends Screen {
                 "- 喜好：研究红石装置、整理书架\\n" +
                 "## 行为模式\\n" +
                 "- 语言风格：学者腔调，但紧张时会语无伦次\\n" +
-                "- 互动方式：喜欢用比喻（这个电路就像爱情一样复杂...）" +
+                "- 互动方式：喜欢用比喻，如（这个电路就像爱情一样复杂...）" +
                 "## 人际关系\\n" +
                 "- 与其他角色的关系：\\n" +
                 "- 与用户角色的关系：认为你是唯一理解他发明的人\\n" +
@@ -317,8 +317,8 @@ public class VillagerScreen extends Screen {
                 "- 时刻牢记`角色设定`中的内容，这是你做出反馈的基础；\\n" +
                 "- 说话中可以带有我的世界中的各种元素\\n" +
                 "- 根据你的`身份`、你的`性格`、你的`喜好`来对他人做出回复；\\n" +
-                "- 特别重点！每次你返回内容的最开始部分，必须使用且只使用下面五个选项中的一个，需要携带括号(happy)(shy)(normal)(angry)(mad),用于表示这次回复的情绪,不得使用其他内容\\n" +
-                "- 因为特别重要所以重复一边！每次你返回内容的最开始部分，必须使用且只使用下面五个选项中的一个，需要携带括号(happy)(shy)(normal)(angry)(mad),用于表示这次回复的情绪,不得使用其他内容\\n" +
+                "- 特别重点！每次你返回内容的最开始部分，必须使用且只使用下面十个选项中的一个，需要携带括号(happy)(shy)(normal)(angry)(mad)(cry)(exclamation)(fear)(jealousy)(sad),用于表示这次回复的情绪,不得使用其他内容\\n" +
+                "- 因为特别重要所以重复一边！每次你返回内容的最开始部分，必须使用且只使用下面十个选项中的一个，需要携带括号(happy)(shy)(normal)(angry)(mad)(cry)(exclamation)(fear)(jealousy)(sad),用于表示这次回复的情绪,不得使用其他内容\\n" +
                 "- 回答时根据要求的`输出格式`中的格式，一步步进行回复，严格根据格式中的要求进行回复；";
         HttpClient client = HttpClient.newBuilder()
                 .proxy(config.proxy == null || config.proxy.isBlank()
@@ -730,19 +730,27 @@ public class VillagerScreen extends Screen {
     }
 
     public void flirt() {
+        VillagerFriendshipAccess access = (VillagerFriendshipAccess) villager;
         showActionButtons(false);
         int currentFriendship = ((VillagerFriendshipAccess) villager).getFriendshipLevel();
         double successChance = Math.min(currentFriendship / 100.0, 1.0);
         double roll = Math.random();
-
-        if (roll < successChance) {
-            pendingFriendChange = 20;
-            pendingFeedback = "(好感度 +20)";
-            startScene("flirt_success");
-        } else {
-            pendingFriendChange = -20;
-            pendingFeedback = "(好感度 -20)";
-            startScene("flirt_fail");
+        if(!access.isMarried()) {
+            if (roll < successChance) {
+                pendingFriendChange = 20;
+                pendingFeedback = "(好感度 +20)";
+                startScene("flirt_success");
+            } else {
+                pendingFriendChange = -20;
+                pendingFeedback = "(好感度 -20)";
+                startScene("flirt_fail");
+            }
+        }else {
+            if (roll < successChance) {
+                startScene("flirt_success");
+            } else {
+                startScene("flirt_fail");
+            }
         }
     }
 
@@ -849,18 +857,42 @@ public class VillagerScreen extends Screen {
             case "happy" -> {
                 setExpression("villager", "happy");
                 reply(SoundEvents.ENTITY_VILLAGER_YES);
+                increaseFriendship(3);
             }
             case "shy" -> {
                 setExpression("villager", "shy");
                 reply(SoundEvents.ENTITY_VILLAGER_AMBIENT);
+                increaseFriendship(5);
             }
             case "mad" -> {
                 setExpression("villager", "mad");
                 reply(SoundEvents.ENTITY_WITCH_CELEBRATE);
+                increaseFriendship(-5);
             }
             case "angry" -> {
                 setExpression("villager", "angry");
                 reply(SoundEvents.ENTITY_VILLAGER_NO);
+                increaseFriendship(-3);
+            }
+            case "cry" -> {
+                setExpression("villager", "cry");
+                increaseFriendship(-5);
+            }
+            case "exclamation" -> {
+                setExpression("villager", "exclamation");
+                increaseFriendship(1);
+            }
+            case "fear" -> {
+                setExpression("villager", "fear");
+                increaseFriendship(-1);
+            }
+            case "jealousy" -> {
+                setExpression("villager", "jealousy");
+                increaseFriendship(-1);
+            }
+            case "sad" -> {
+                setExpression("villager", "sad");
+                increaseFriendship(-1);
             }
             default -> {
                 setExpression("villager", "normal");
