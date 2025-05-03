@@ -1,6 +1,3 @@
-/kill @e[type=!minecraft:player]
-/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
-/kill @e[type=!minecraft:player]
 /summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
 /kill @e[type=!minecraft:player,type=!minecraft:villager]
 /summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
@@ -48,3 +45,6 @@
 /summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
 /gamerule doDaylightCycle false
 /time add 100d
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
+/kill @e
+/summon minecraft:villager ~ ~ ~ {VillagerData:{profession:nitwit}}
